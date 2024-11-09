@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Arin Sanghi - Unity Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .typing-effect::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        .project-card {
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        .skill-progress {
+            transition: width 1.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-900 bg-opacity-90 backdrop-filter backdrop-blur-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a class="text-2xl font-bold text-blue-400" href="#">AS</a>
+                <div class="hidden md:flex space-x-8">
+                    <a class="hover:text-blue-400 transition duration-300" href="#about">About</a>
+                    <a class="hover:text-blue-400 transition duration-300" href="#experience">Experience</a>
+                    <a class="hover:text-blue-400 transition duration-300" href="#projects">Projects</a>
+                    <a class="hover:text-blue-400 transition duration-300" href="#skills">Skills</a>
+                    <a class="hover:text-blue-400 transition duration-300" href="#contact">Contact</a>
+                </div>
+                <button class="md:hidden text-2xl">☰</button>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <header class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-purple-900 opacity-50"></div>
+        <div class="absolute inset-0 bg-[url('https://placehold.co/1920x1080')] bg-cover bg-center opacity-10"></div>
+        <div class="absolute inset-0">
+            <div class="w-full h-full" id="particles-js"></div>
+        </div>
+        <div class="container mx-auto px-4 z-10 text-center">
+            <div class="animate-float">
+                <h1 class="text-6xl font-bold mb-4">Arin Sanghi</h1>
+                <p class="text-2xl text-blue-300 mb-8 typing-effect" id="typing-text">Senior Unity Developer</p>
+            </div>
+            <div class="flex justify-center space-x-4 mb-8">
+                <a class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full transition duration-300 transform hover:scale-105" href="mailto:arinpixels@gmail.com">Contact Me</a>
+                <a class="border border-blue-600 hover:bg-blue-600 px-6 py-3 rounded-full transition duration-300 transform hover:scale-105" href="#portfolio">View Portfolio</a>
+            </div>
+            <div class="flex justify-center space-x-6 mt-8">
+                <a class="text-gray-400 hover:text-blue-400 transition duration-300" href="#"><i class="fab fa-github text-2xl"></i></a>
+                <a class="text-gray-400 hover:text-blue-400 transition duration-300" href="#"><i class="fab fa-linkedin text-2xl"></i></a>
+                <a class="text-gray-400 hover:text-blue-400 transition duration-300" href="#"><i class="fab fa-twitter text-2xl"></i></a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a class="text-white" href="#about"><i class="fas fa-chevron-down text-2xl"></i></a>
+        </div>
+    </header>
+    <!-- About Section -->
+    <section class="py-20 bg-gray-800 relative overflow-hidden" id="about">
+        <div class="absolute inset-0 bg-gradient-to-b from-gray-900 to-transparent opacity-50"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <h2 class="text-4xl font-bold mb-12 text-center">About Me</h2>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-gray-300">
+                    <p class="leading-relaxed">With a robust 4.5 year background in game development, I have successfully designed and delivered a diverse range of engaging games across various platforms.</p>
+                    <p class="leading-relaxed">My expertise spans the creation of slot games, casino games, and popular card games such as Rummy, Teen Patti, and Dragon Tiger.</p>
+                    <div class="flex flex-wrap gap-4 mt-6">
+                        <span class="px-4 py-2 bg-blue-900 rounded-full text-sm">Unity 2D/3D</span>
+                        <span class="px-4 py-2 bg-blue-900 rounded-full text-sm">C# Development</span>
+                        <span class="px-4 py-2 bg-blue-900 rounded-full text-sm">Game Design</span>
+                        <span class="px-4 py-2 bg-blue-900 rounded-full text-sm">VR/AR</span>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="aspect-w-1 aspect-h-1 rounded-lg overflow-hidden shadow-2xl">
+                        <img alt="Profile picture of Arin Sanghi" class="object-cover" height="600" src="https://storage.googleapis.com/a1aa/image/dO5TwAXjI86AN1qEo7b0eI1jnK6jCFYNE8UmsgB6pTfFrLvTA.jpg" width="600"/>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-blue-600 rounded-lg opacity-20 transform rotate-12"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Projects Section -->
+    <section class="py-20 bg-gray-900" id="projects">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="project-card bg-gray-800 rounded-lg overflow-hidden shadow-xl">
+                    <div class="relative">
+                        <img alt="Screenshot of Casino Game Suite project" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/1QihpiOo82a2HtPTM78fVFYHOJTxSaV9KfYedtOqbLpfru8OB.jpg" width="400"/>
+                        <div class="absolute inset-0 bg-blue-600 opacity-0 hover:opacity-90 transition duration-300 flex items-center justify-center">
+                            <button class="px-6 py-2 bg-white text-blue-600 rounded-full font-bold">View Project</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Casino Game Suite</h3>
+                        <p class="text-gray-400 mb-4">A collection of multiplayer casino games including Poker, Rummy, and Teen Patti.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">Unity</span>
+                            <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">C#</span>
+                            <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">Multiplayer</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="project-card bg-gray-800 rounded-lg overflow-hidden shadow-xl">
+                    <div class="relative">
+                        <img alt="Screenshot of VR Training Simulator project" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/pcxR8Q4xbp78N1trzCD33f8DnjRFkh4oxmf5Vf021vkDWXeOB.jpg" width="400"/>
+                        <div class="absolute inset-0 bg-blue-600 opacity-0 hover:opacity-90 transition duration-300 flex items-center justify-center">
+                            <button class="px-6 py-2 bg-white text-blue-600 rounded-full font-bold">View Project</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">VR Training Simulator</h3>
+                        <p class="text-gray-400 mb-4">Virtual reality training platform for industrial applications.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">VR</span>
+                            <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">Unity</span>
+                            <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">Optimization</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="project-card bg-gray-800 rounded-lg overflow-hidden shadow-xl">
+                    <div class="relative">
+                        <img alt="Screenshot of AR Product Viewer project" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/TloHZlHv4zpZIZRvY95TyHxmnJ6GqCWBaZfSsQfec5BHWXeOB.jpg" width="400"/>
+                        <div class="absolute inset-0 bg-blue-600 opacity-0 hover:opacity-90 transition duration-300 flex items-center justify-center">
+                            <button class="px-6 py-2 bg-white text-blue-600 rounded-full font-bold">View Project</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">AR Product Viewer</h3>
+                        <p class="text-gray-400 mb-4">Augmented reality application for product visualization.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">AR</span>
+                            <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">Unity</span>
+                            <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">Mobile</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Experience Section -->
+    <section class="py-20 bg-gray-800 relative" id="experience">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center">Professional Journey</h2>
+            <div class="max-w-4xl mx-auto">
+                <!-- Timeline -->
+                <div class="relative">
+                    <!-- Timeline line -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-blue-600"></div>
+                    <!-- Experience Items -->
+                    <div class="space-y-20">
+                        <!-- EDIIIE -->
+                        <div class="relative">
+                            <div class="absolute left-1/2 transform -translate-x-1/2 -mt-2">
+                                <div class="w-4 h-4 rounded-full bg-blue-600"></div>
+                            </div>
+                            <div class="ml-auto w-1/2 pl-8">
+                                <div class="bg-gray-900 rounded-lg p-6 shadow-xl transform hover:scale-105 transition duration-300">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <h3 class="text-2xl font-bold text-blue-400">Senior Unity Developer</h3>
+                                            <p class="text-lg text-gray-400">EDIIIE</p>
+                                        </div>
+                                        <span class="text-gray-400">26 August 2024 - Present</span>
+                                    </div>
+                                    <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                        <li>Implemented Photon Fusion 2 for networking in a Unity project, ensuring efficient data replication and synchronization across clients</li>
+                                        <li>Optimized Unity UI and Canvas for improved performance and responsiveness</li>
+                                        <li>Improved shader performance by reducing unnecessary calculations and using Unity's built-in shader optimization tools</li>
+                                        <li>Optimized triangle meshes for reduced polygon count and improved rendering performance</li>
+                                        <li>Implemented lag compensation techniques to improve hit box detection accuracy</li>
+                                        <li>Configured Network Project Config settings for optimal performance, including peer mode, lag compensation, and encryption</li>
+                                        <li>Used Unity's Frame Debugger to identify and optimize performance bottlenecks in shaders and scripts</li>
+                                        <li>Implemented custom shader optimizations, such as reducing non-constant math and using scalar values before vector values</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- BR Softech -->
+                        <div class="relative">
+                            <div class="absolute left-1/2 transform -translate-x-1/2 -mt-2">
+                                <div class="w-4 h-4 rounded-full bg-blue-600"></div>
+                            </div>
+                            <div class="w-1/2 pr-8">
+                                <div class="bg-gray-900 rounded-lg p-6 shadow-xl transform hover:scale-105 transition duration-300">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <h3 class="text-2xl font-bold text-blue-400">Senior Unity Developer</h3>
+                                            <p class="text-lg text-gray-400">BR Softech</p>
+                                        </div>
+                                        <span class="text-gray-400">02 April 2024 - 31 July 2024</span>
+                                    </div>
+                                    <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                        <li>Developed multiplayer casino games using SmartFoxServer (SFS) and SignalR Core servers</li>
+                                        <li>Created poker games with real-time betting, hand evaluation, and winner determination</li>
+                                        <li>Designed and developed slot games with multiplayer features like tournaments and leaderboards</li>
+                                        <li>Implemented robust matchmaking systems for seamless player connections</li>
+                                        <li>Developed scalable and secure server-side architecture</li>
+                                        <li>Integrated chat, emojis, and social sharing features</li>
+                                        <li>Optimized game performance to minimize latency</li>
+                                        <li>Collaborated with cross-functional teams to ensure high-quality gaming experience</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Maxway Infotech -->
+                        <div class="relative">
+                            <div class="absolute left-1/2 transform -translate-x-1/2 -mt-2">
+                                <div class="w-4 h-4 rounded-full bg-blue-600"></div>
+                            </div>
+                            <div class="ml-auto w-1/2 pl-8">
+                                <div class="bg-gray-900 rounded-lg p-6 shadow-xl transform hover:scale-105 transition duration-300">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <div>
+                                            <h3 class="text-2xl font-bold text-blue-400">Senior Unity Developer</h3>
+                                            <p class="text-lg text-gray-400">Maxway Infotech</p>
+                                        </div>
+                                        <span class="text-gray-400">09 October 2023 - 31 March 2024</span>
+                                    </div>
+                                    <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                        <li>Managed a team of 8 members, including designers, animators, and developers</li>
+                                        <li>Developed slot games, casino games, Rummy games, and Teen Patti games</li>
+                                        <li>Guided the team to achieve project milestones and deadlines</li>
+                                        <li>Coordinated efforts of designers, animators, and developers</li>
+                                        <li>Developed and implemented game design documents and project plans</li>
+                                        <li>Conducted regular code reviews and provided constructive feedback</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- MYB Technologies -->
+                    <div class="relative">
+                        <div class="absolute left-1/2 transform -translate-x-1/2 -mt-2">
+                            <div class="w-4 h-4 rounded-full bg-blue-600"></div>
+                        </div>
+                        <div class="w-1/2 pr-8">
+                            <div class="bg-gray-900 rounded-lg p-6 shadow-xl transform hover:scale-105 transition duration-300">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-blue-400">Unity Developer</h3>
+                                        <p class="text-lg text-gray-400">MYB Technologies</p>
+                                    </div>
+                                    <span class="text-gray-400">2020 - Present</span>
+                                </div>
+                                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                                    <li>Created a Multiplayer LUDO Board Game based on the traditional board game of Ludo using Photon Multiplayer game.</li>
+                                    <li>Developed engaging gameplay mechanics and user interfaces to enhance player experience.</li>
+                                    <li>Collaborated with designers and artists to create visually appealing game assets and animations.</li>
+                                    <li>Implemented real-time multiplayer features, including matchmaking and in-game chat functionalities.</li>
+                                    <li>Optimized game performance for various platforms, ensuring smooth gameplay across devices.</li>
+                                    <li>Conducted playtesting sessions to gather feedback and iteratively improve game features and mechanics.</li>
+                                    <li>Maintained and updated the game post-launch, adding new features and addressing player feedback.</li>
+                                    <li>Participated in code reviews and provided mentorship to junior developers on best practices in Unity development.</li>
+                                    <li>Utilized version control systems (Git) for collaboration and project management.</li>
+                                    <li>Engaged in continuous learning and professional development to stay current with industry trends and technologies.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Skills Section -->
+<section class="py-20 bg-gray-800 relative" id="skills">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold mb-12 text-center text-blue-400">Skills</h2>
+        <div class="max-w-4xl mx-auto">
+            <div class="grid grid-cols-2 gap-8">
+                <div class="bg-gray-900 rounded-lg p-6 shadow-xl transform hover:scale-105 transition duration-300">
+                    <h3 class="text-2xl font-bold text-blue-400 mb-4">Technical Skills</h3>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2">
+                        <li>Proficient in Unity3D and C# programming</li>
+                        <li>Experience with Photon Networking and SmartFoxServer</li>
+                        <li>Strong understanding of game mechanics and design principles</li>
+                        <li>Shader programming and optimization</li>
+                        <li>Version control with Git</li>
+                        <li>Experience with UI/UX design in gaming</li>
+                        <li>Knowledge of multiplayer game development</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-900 rounded-lg p-6 shadow-xl transform hover:scale-105 transition duration-300">
+                    <h3 class="text-2xl font-bold text-blue-400 mb-4">Additional Skills</h3>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2">
+                        <li>Game Designing</li>
+                        <li>Prototyping</li>
+                        <li>Visual Branding</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="py-20 bg-gray-800 relative" id="about">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold mb-12 text-center text-blue-400">About Arin Sanghi</h2>
+        <p class="text-gray-300 text-lg text-center max-w-2xl mx-auto">
+            I have over 3 years of experience designing the user interface and user experience of dozens of games and developing them from scratch. I am passionate about bold but intuitive design, and doing work for companies with social responsibility.
+        </p>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section class="py-20 bg-gray-800 relative" id="projects">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold mb-12 text-center text-blue-400">My Best Work</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">LUDO HUB</h3>
+                <p class="text-gray-300">Created a Photon Multiplayer game for a USA-based startup.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Mulim</h3>
+                <p class="text-gray-300">Created a platform for an e-commerce startup based out of Saudi Arabia.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">LUDO MAN</h3>
+                <p class="text-gray-300">Created a Man Ludo type game for a personal experiment.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Recent Projects</h3>
+                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                    <li>Action Game created using Unity 3D</li>
+                    <li>Fighting game with characters designed from scratch</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section class="py-20 bg-gray-800 relative" id="projects">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold mb-12 text-center text-blue-400">My Best Work</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">LUDO HUB</h3>
+                <p class="text-gray-300">Created a Photon Multiplayer game for a USA-based startup.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Mulim</h3>
+                <p class="text-gray-300">Created a platform for an e-commerce startup based out of Saudi Arabia.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">LUDO MAN</h3>
+                <p class="text-gray-300">Created a Man Ludo type game for a personal experiment.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Recent Projects</h3>
+                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                    <li>Action Game created using Unity 3D</li>
+                    <li>Fighting game with characters designed from scratch</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2 class="text-4xl font-bold mb-12 text-center text-blue-400 mt-12">Casino Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Zandu</h3>
+                <p class="text-gray-300">A thrilling card game where players aim to outsmart their opponents using strategy and luck.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Muflis</h3>
+                <p class="text-gray-300">A fast-paced card game that combines elements of bluffing and strategy, perfect for competitive play.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">AK 47</h3>
+                <p class="text-gray-300">A high-stakes shooting game that immerses players in a world of tactical challenges and rewards.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">4 Cards</h3>
+                <p class="text-gray-300">A unique card game where players must create the best hand using only four cards drawn from the deck.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">2x Boot</h3>
+                <p class="text-gray-300">An engaging game where players can double their stakes with strategic betting options.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">4x Boot</h3>
+                <p class="text-gray-300">Similar to 2x Boot, but with increased stakes and exciting twists that keep players on their toes.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Joker</h3>
+                <p class="text-gray-300">A classic card game that incorporates wild cards, adding an unpredictable
+                                <p class="text-gray-300">A classic card game that incorporates wild cards, adding an unpredictable twist to traditional gameplay.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Aflatoon</h3>
+                <p class="text-gray-300">An exciting dice game where players roll to match and score points against their opponents.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Crash</h3>
+                <p class="text-gray-300">A high-energy betting game where players must cash out before the multiplier crashes.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Roulette</h3>
+                <p class="text-gray-300">The classic casino game where players bet on where the ball will land on a spinning wheel.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Rummy Points</h3>
+                <p class="text-gray-300">A strategic card game where players aim to form sets and sequences to win points.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">3 Patti</h3>
+                <p class="text-gray-300">A popular Indian card game that combines skill and luck, played with three cards.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Jokar</h3>
+                <p class="text-gray-300">A unique variation of traditional card games, adding wild cards for extra excitement.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Pot Blind</h3>
+                <p class="text-gray-300">A thrilling poker variant where players must bet blind before seeing their cards.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Farm Slot</h3>
+                <p class="text-gray-300">A fun slot game featuring a charming farm theme with various symbols and bonuses.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Zombieland Slot</h3>
+                <p class="text-gray-300">An adventurous slot game set in a zombie apocalypse, offering thrilling gameplay and big wins.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Seven Slot</h3>
+                <p class="text-gray-300">A classic fruit machine slot game featuring lucky sevens and exciting bonus rounds.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Andar Bahar</h3>
+                <p class="text-gray-300">A traditional Indian card game that is simple yet exciting, where players bet on the outcome of the next card.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">7 UP 7 DOWN</h3>
+                <p class="text-gray-300">A straightforward betting game where players guess whether the next card will be above or below seven.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">RED vs BLACK</h3>
+                <p class="text-gray-300">
+                                <p class="text-gray-300">A simple yet thrilling game where players bet on whether the next card drawn will be red or black.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">American Roulette</h3>
+                <p class="text-gray-300">The classic roulette game featuring the iconic American wheel with an additional double zero slot.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Car Roulette</h3>
+                <p class="text-gray-300">A unique twist on traditional roulette, featuring car-themed bets and exciting gameplay.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Dragon vs Tiger</h3>
+                <p class="text-gray-300">A fast-paced card game where players bet on which side, Dragon or Tiger, will draw the higher card.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Baccarat AB</h3>
+                <p class="text-gray-300">A popular card game that pits players against the dealer in a battle for the highest hand.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Deal Rummy</h3>
+                <p class="text-gray-300">A classic rummy game where players aim to form sets and runs to win the game.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Point Rummy</h3>
+                <p class="text-gray-300">A variant of rummy where players accumulate points based on their card combinations.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Pool Rummy</h3>
+                <p class="text-gray-300">A fun version of rummy played with a pool of cards, allowing for dynamic gameplay and strategies.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">High Low Teen Patti</h3>
+                <p class="text-gray-300">A thrilling card game where players bet on whether the next card will be higher or lower than the previous one.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Draw Teen Patti</h3>
+                <p class="text-gray-300">A variant of Teen Patti where players have the option to draw additional cards to improve their hand.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Wild Draw Teen Patti</h3>
+                <p class="text-gray-300">An exciting version of Teen Patti with wild cards that can change the dynamics of the game.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Stud Teen Patti</h3>
+                <p class="text-gray-300">A unique twist on Teen Patti where players are dealt a mix of hidden and exposed cards.</p>
+            </div>
+            <div class="bg-gray-900 rounded-lg p-6 shadow-xl">
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Omaha Teen Patti</h3>
+                <p class="text-gray-300">Combining the excitement of Omaha poker with Teen Patti, this game offers strategic depth and fun.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="py-20 bg-gray ```html
+-900">
+    <div class="container mx-auto">
+        <h2 class="text-4xl font-bold text-white mb-10">Projects at BR Softech</h2>
+        
+        <div class="bg-gray-800 rounded-lg p-6 shadow-xl mb-8">
+            <h3 class="text-3xl font-bold text-blue-400 mb-4">Multiplayer Poker Game</h3>
+            <p class="text-gray-300">
+                Developed a robust multiplayer poker game utilizing SignalR Core, enabling real-time communication and seamless gameplay for users. The project involved creating a comprehensive casino library and a dynamic DLL that encapsulates core poker game functions and functionalities. This architecture allows for easy integration of various poker variants and enhances the overall gaming experience by ensuring low latency and high responsiveness during gameplay. The game supports multiple players, providing an engaging and interactive environment where users can compete against each other in real-time.
+            </p>
+        </div>
+
+        <div class="bg-gray-800 rounded-lg p-6 shadow-xl mb-8">
+            <h3 class="text-3xl font-bold text-blue-400 mb-4">Great Indian Rummy</h3>
+            <p class="text-gray-300">
+                Created an immersive Rummy game titled "Great Indian Rummy," built on a Unity backend with an SFS (SmartFoxServer) server architecture. This project integrates payment gateways such as Razorpay and PhonePe, facilitating secure and efficient transactions for players. The game features a user-friendly webview that enhances accessibility, allowing players to enjoy the game on various devices without compromising on performance. The design focuses on delivering a smooth user experience, with intuitive controls and engaging graphics that capture the essence of traditional Rummy while incorporating modern gaming elements. Players can join tables, compete in tournaments, and enjoy a social gaming experience with friends and family.
+            </p>
+        </div>
+    </div>
+</section>
